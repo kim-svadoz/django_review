@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  {% block body %}
+  <h1>메인페이지</h1>
+  {% for musician in musicians %}
+  <a href="{% url 'musicians:detail' musician.pk %}"><li>{{ musician.name }} , {{ musician.age }}</li</a>
+  {% endfor %}
+
+  <a href="{% url 'musicians:create' %}"><h3> 뮤지션 추가</h3></a>
+  {% endblock %}
+</body>
+</html>
+
